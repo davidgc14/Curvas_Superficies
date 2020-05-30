@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7420) (preloaded format=pdflatex 2020.5.15)  30 MAY 2020 13:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7420) (preloaded format=pdflatex 2020.5.15)  30 MAY 2020 23:42
 entering extended mode
 **c:/Users/Arquímedes/Desktop/LaTex/Curvas_Superficies/PRUEBA3.tex
 (c:/Users/Arquímedes/Desktop/LaTex/Curvas_Superficies/PRUEBA3.tex
@@ -514,46 +514,66 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--74
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
+[1{C:/Users/Arquímedes/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
-[1{C:/Users/Arquímedes/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Overfull \hbox (19.93382pt too wide) in paragraph at lines 87--90
+
+Overfull \hbox (19.93382pt too wide) in paragraph at lines 92--95
 \OT1/cmr/m/n/10 (-20) donde $\OML/cmm/m/it/10 k\OT1/cmr/m/n/10 (-20) (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 (-20) )$ es la cur-vatura de la curva $\OML/cmm/m/it/10 \OT1/cmr/m/n/10 (-20) (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 (-20) )$, la cual sabe-mos que viene dada por $\OML/cmm/m/it/10 k\OT1/cmr/m/n/10 (-20) (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 (-20) ) = []$,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--93
+Underfull \hbox (badness 10000) in paragraph at lines 95--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--93
+Underfull \hbox (badness 10000) in paragraph at lines 95--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+[2] 
 AED: lastpage setting LastPage
-[2] (c:/Users\Arquímedes\Desktop\LaTex\Curvas_Superficies\PRUEBA3.aux) ) 
+[3] (c:/Users\Arquímedes\Desktop\LaTex\Curvas_Superficies\PRUEBA3.aux) ) 
 Here is how much of TeX's memory you used:
- 25731 strings out of 480811
- 645625 string characters out of 2893361
- 1031886 words of memory out of 3000000
+ 25739 strings out of 480811
+ 645687 string characters out of 2893361
+ 1032886 words of memory out of 3000000
  41261 multiletter control sequences out of 15000+200000
- 541358 words of font info for 76 fonts, out of 3000000 for 9000
+ 541562 words of font info for 80 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,9n,98p,779b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Arquímedes/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Arquímedes/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Arquímedes/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Arquímedes/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Arquímedes/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Arquímedes/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Arquímedes/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Arquímedes/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Arquímedes/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Arquímedes/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Arquímedes/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Arquímedes/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Arquímedes/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Arquímedes/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/doublestroke/dsrom10.pfb>
-Output written on c:/Users\Arquímedes\Desktop\LaTex\Curvas_Superficies\PRUEBA3.pdf (3 pages, 147477 bytes).
+Output written on c:/Users\Arquímedes\Desktop\LaTex\Curvas_Superficies\PRUEBA3.pdf (4 pages, 149973 bytes).
 PDF statistics:
- 71 PDF objects out of 1000 (max. 8388607)
+ 74 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  10765 words of extra memory for PDF output out of 12000 (max. 10000000)
 
