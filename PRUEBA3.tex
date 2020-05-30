@@ -24,7 +24,7 @@
 
 
 \author{David García Curbelo}
-\title{Curvas y Superficies, Prueba 3 Opción B}
+\title{Curvas y Superficies, Prueba 3 Opción A}
 \date{Grado en Matemáticas, Grupo A}
 
 \pagestyle{empty}
@@ -39,7 +39,42 @@
     \setcounter{page}{1}
     \pagestyle{plain}
 
-    \textbf{Ejercicio 1. } 
+    \textbf{Ejercicio 1. } \\
+    No es relevante que dos superficies sean difeomorfas para que tengan la misma imagen esférica. Sabemos que ambas superficies (el cilindro elíptico y el catenoide) 
+    son superficies difeomorfas, y además ambas son orientables. Por ser orientables podemos cosniderar una orientación para cada una de las superficies, y por tanto una aplicación 
+    de Gauss para cada una de ellas, dada por 
+    \begin{equation*}
+        N_1: S_1 \longrightarrow \mathds{S}^2\\
+        N_2: S_2 \longrightarrow \mathds{S}^2
+    \end{equation*}
+    siendo $S_1$ y $S_2$ el cilindro y el catenoide, respectivamente. Calculemos primero la imagen esférica del cilindro. para ello consideramos el conjunto
+    $$C_{\alpha} = \{\alpha(t) + v\vec{e}_3 \thinspace : \thinspace t\in I, \thinspace v\in \R\}$$
+    Donde $\alpha(t)$ viene dado por la elipse $\alpha(t) = (a\cos(t), b\sin(t), 0), \thinspace a,b\in \R$. Consideremos por tanto la siguiente aplicación, en la que nos basaremos para 
+    la construcción de $N_1$.
+    \begin{equation*}
+        \begin{aligned}
+            & F:I\times \R \rightarrow C_{\alpha} \subset \R^3 \\
+            &F(t,v) = (a\cos(t), b\sin(t), v)
+        \end{aligned}
+    \end{equation*}
     
+    Por tanto obtenemos la fórmula de Gauss:
+    $$N_1(F(t,v)) = \frac{F_t \times F_v}{\left|F_t \times F_v\right|} = \frac{1}{\sqrt{a^2\sin^2(t) + b^2\cos^2(t)}} (b\cos(t), a\sin(t), 0)$$
+    Donde podemos observar que dicha aplicación de Gauss lleva cualquier cilindro elíptico a la circunferencia obtenida de intersecar la esfera $\mathds{S}^2$ con el plano $z=0$. Calculemos
+    ahora la aplicación de Gauss para el catenoide. Sabemos que se trata de una superficie de revolución, al rotar sobre (en este caso) el eje $z$ una catenaria de la forma
+    $\alpha(t) = (a\cosh(t), 0, bt), \thinspace b,a\in \R-\{0\}$. Por ello, obtenemos la aplicación $F$ asociada a dicha superficie de revolución dada por 
+    \begin{equation*}
+        \begin{aligned}
+            & F:I\times \R \rightarrow S_{\alpha} \subset \R^3 \\
+            &F(t,v) = (a\cosh(t)\cos(v), a\cosh(t)\sin(v), bt)
+        \end{aligned}
+    \end{equation*}
+    Donde ahora $v$ define el ángulo de rotación de la generatriz (en vez del desplazamiento de la directriz del caso anterior). Por lo tanto obtenemos la aplicación de Gauss dada por
+    $$N_2(F(t,v)) = \frac{1}{\sqrt{a^2\sinh^2(t) + 1}} (-b\cos(v), -b\sin(v),a\sinh(t))$$
+    Para la cual, al ser una superficie de revolución, podemos considerar la imagen una generatriz cualquiera y luego rotarla al rededor del eje $z$ (para estudiar y clasificar su imagen 
+    esférica). Por tanto, tomando $v=0$ obtenemos la curva por la imagen de $N_2$, la curva $N_2(F(t,0))=(-1, 0, a\sinh(t))$, la cual observamos que es una recta, 
+    
+    y por tanto al rotarla obtenemos
+    que la imagen esférica del catenoide es toda la esfera $\mathds{S}^2$ sin las antípodas que pasan por el eje $z$, es decir, $\mathds{S}^2 - \{(0,0,1), (0,0,-1)\}$
 
 \end{document}
