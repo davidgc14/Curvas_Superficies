@@ -40,6 +40,7 @@
     \pagestyle{plain}
 
     \textbf{Ejercicio 1. } \\
+
     No es relevante que dos superficies sean difeomorfas para que tengan la misma imagen esférica. Sabemos que ambas superficies (el cilindro elíptico y el catenoide) 
     son superficies difeomorfas, y además ambas son orientables. Por ser orientables podemos cosniderar una orientación para cada una de las superficies, y por tanto una aplicación 
     de Gauss para cada una de ellas, dada por 
@@ -62,19 +63,42 @@
     $$N_1(F(t,v)) = \frac{F_t \times F_v}{\left|F_t \times F_v\right|} = \frac{1}{\sqrt{a^2\sin^2(t) + b^2\cos^2(t)}} (b\cos(t), a\sin(t), 0)$$
     Donde podemos observar que dicha aplicación de Gauss lleva cualquier cilindro elíptico a la circunferencia obtenida de intersecar la esfera $\mathds{S}^2$ con el plano $z=0$. Calculemos
     ahora la aplicación de Gauss para el catenoide. Sabemos que se trata de una superficie de revolución, al rotar sobre (en este caso) el eje $z$ una catenaria de la forma
-    $\alpha(t) = (a\cosh(t), 0, bt), \thinspace b,a\in \R-\{0\}$. Por ello, obtenemos la aplicación $F$ asociada a dicha superficie de revolución dada por 
-    \begin{equation*}
-        \begin{aligned}
-            & F:I\times \R \rightarrow S_{\alpha} \subset \R^3 \\
-            &F(t,v) = (a\cosh(t)\cos(v), a\cosh(t)\sin(v), bt)
-        \end{aligned}
-    \end{equation*}
-    Donde ahora $v$ define el ángulo de rotación de la generatriz (en vez del desplazamiento de la directriz del caso anterior). Por lo tanto obtenemos la aplicación de Gauss dada por
-    $$N_2(F(t,v)) = \frac{1}{\sqrt{a^2\sinh^2(t) + 1}} (-b\cos(v), -b\sin(v),a\sinh(t))$$
-    Para la cual, al ser una superficie de revolución, podemos considerar la imagen una generatriz cualquiera y luego rotarla al rededor del eje $z$ (para estudiar y clasificar su imagen 
-    esférica). Por tanto, tomando $v=0$ obtenemos la curva por la imagen de $N_2$, la curva $N_2(F(t,0))=(-1, 0, a\sinh(t))$, la cual observamos que es una recta, 
-    
-    y por tanto al rotarla obtenemos
-    que la imagen esférica del catenoide es toda la esfera $\mathds{S}^2$ sin las antípodas que pasan por el eje $z$, es decir, $\mathds{S}^2 - \{(0,0,1), (0,0,-1)\}$
+    $\alpha(t) = (a\cosh(t), 0, bt), \thinspace b,a\in \R-\{0\}$. Por ello, obtengamos la imagen esférica del campo normal unitario de nuestra catenaria, que tendrá función de curva generatriz,
+    el cual rotaremos posteriormente para obtener así la imagen esférica de toda la superficie. Para ello consideremos su referencia de Frenet, la cual viene dada por
+    $$N(t) = \left(\frac{\sinh(t)}{\cosh(t)}, 0, \frac{1}{\cosh(t)} \right)$$
+    El cual se trata de una semicircunferencia sin los extremos, y que por tanto al rotarla obtenemos
+    que la imagen esférica del catenoide es toda la esfera $\mathds{S}^2$ sin las antípodas que pasan por el eje $z$, es decir, $\mathds{S}^2 - \{(0,0,1), (0,0,-1)\}$, y por tanto podemos ver que,
+    a pesar de ser dos superficies difeomorfas, poseen imágenes esféricas diferentes.\\ \\
+
+    \textbf{Ejercicio 2. } \\
+
+    El enunciado mencionado es claramente cierto. 
+
+    \textbf{Ejercicio 3. } \\
+
+    Para poder comprobar la veracidad o falsedad del enunciado, necesitamos saber la función curvatura de Gauss en toda la superficie, para poder así clasificar sus puntos. Sabemos que el 
+    toro elíptico es una superficie de revolución resultado de rotar con respecto al eje $z$ la curva $\alpha(t) = (R + a\cos(t), 0, b\sin(t))$, donde $R>a, \thinspace R,a,b > 0$. Sabiendo esto,
+    podemos definir la matriz del endomorfismo de Weingarten como sigue 
+    $$A=
+    \begin{pmatrix}
+        k(t) & 0 \\
+        0 & \frac{\alpha_3'(t)}{\alpha_1(t)}
+    \end{pmatrix}
+    $$
+    donde $k(t)$ es la curvatura de la curva $\alpha(t)$, la cual sabemos que viene dada por $k(t)=\frac{ab}{(a^2\sin^2(t) + b^2 \cos^2(t))^{\frac{3}{2}}}$, que además es positiva
+    para todo $t\in \R$. Por ello, como sabemos que las función de curvatura de Gauss viene dada por el producto de los valores propios de dicha matriz, vemos que
+    $$K = \frac{ab}{(a^2\sin^2(t) + b^2 \cos^2(t))^{\frac{3}{2}}} \frac{\alpha_3'(t)}{\alpha_1(t)} = \frac{ab^2 \cos(t)}{(R + a\cos(t))(a^2\sin^2(t) + b^2 \cos^2(t))^{\frac{3}{2}}}$$
+    Estudiando el signo de dicha igualdad, observamos que cuando $t=\frac{\pi}{2}$ ó $t=-\frac{\pi}{2}$, tenemos que $K=0$, por lo que los paralelos generados al girar estos dos puntos
+    de la curva $\alpha(t)$ están compuestos por puntos parabólicos. Por ello podemos concluir que un toro elíptico NO tiene todos sus puntos elípticos, ya que contiene otros tipos de puntos. \\ \\
+
+
+
+    \textbf{Ejercicio 5. } \\
+
+    Es verdadero. Basta con ver que un paralelo de una superficie de revolución es el resultado de girar un cierto punto $\alpha(t_0)$ de la curva generatriz de la superficie con respecto
+    al eje de giro. Por ello, al clasificar un cierto punto de dicha curva generatriz, que es clasificado mediante la función curvatura de Gauss, vemos que $K$ no depende del ángulo rotado,
+    y por tanto la clasificación del punto se mantiene a lo largo del paralelo. Como ejemplo podemos considerar el toro elíptico calculado en el \textit{Ejercicio 3}, en el cual vimos que 
+    cuando la curva generatriz tomaba el valor $\frac{\pi}{2}$ (y por tanto considerábamos dicho punto $\alpha(\frac{\pi}{2})$), vimos que el valor de la curvatura de Gauss era nula, y concluíamos
+    que, tanto dicho punto como todo su paralelo, estaban constituidos por puntos parabólicos.
 
 \end{document}
