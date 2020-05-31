@@ -194,5 +194,41 @@
 
     Para clasificar los puntos de dicho grafo necesitamos saber el signo de la función curvatura de Gauss, y a partir de ella y de sus curvaturas principales podremos clasificar cualquier punto
     de la superficie dada. Para ello primero tenemos que parametrizar la superficie dada por el grafo $h$, la cual nos queda de la siguiente manera
-
+    \begin{equation*}
+        \begin{aligned}
+            X: \R^2 &\longrightarrow S \\
+            (u,v) &\longrightarrow X(u, v) = (u, v, h(u,v)) = (u, v, u^3 + v^3)
+        \end{aligned}
+    \end{equation*}
+    Para calcular la curvatura de Gauss y clasificar así los puntos, vamos a necesitar calcular primero la matriz asociada al operador forma, la cual viene dada por 
+    \begin{equation*}
+        A =
+        \begin{pmatrix}
+            a_{11} & a_{12} \\
+            a_{21} & a_{22}
+        \end{pmatrix}
+        = \frac{1}{\langle X_u, X_u \rangle \langle X_v, X_v \rangle - \langle X_u, X_v \rangle ^2}
+        \begin{pmatrix}
+            \langle X_v, X_v \rangle & - \langle X_u, X_v \rangle \\
+            -\langle X_u, X_v \rangle & \langle X_u, X_u \rangle
+        \end{pmatrix}
+        \begin{pmatrix}
+            \langle X_{uu}, N \rangle & \langle X_{uv}, N \rangle \\
+            \langle X_{vu}, N \rangle & \langle X_{vv}, N \rangle
+        \end{pmatrix}
+    \end{equation*}
+    Donde $X_u$, $X_v$, $X_{uv}$, $X_{vv}$, $X_{vu}$ y $X_{uu}$ vienen dados por
+    \begin{equation*}
+        X_u =  \\
+        X_v =  \\
+        X_{uu} = \\
+        X_{uv} = \\
+        X_{vu} = \\
+        X_{vv} = 
+    \end{equation*}
+    Y $N$ es la aplicación de Gauss, la cual se calcula de la siguiente manera:
+    \begin{equation*}
+        X_u \times X_v = 
+        N(X(u,v)) = 
+    \end{equation*}
 \end{document}
