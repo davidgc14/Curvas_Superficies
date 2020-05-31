@@ -81,13 +81,33 @@
 
     \textbf{Ejercicio 2. } \\
 
-    El enunciado mencionado es claramente falso. Nos encontramos ante una doble implicación, en la que la implicación hacia la izquierda (dos curvas tangentes son tangentes sobre 
-    una superficie $\Rightarrow$ mismo vector normal en el punto de intersección de dos curvas que se cortan) sabemos que es cierto por un resultado visto en clase, pero el recíproco 
-    no es siempre cierto. Para ello consideremos el siguiente contraejemplo:
+    El enunciado mencionado es claramente falso. Nos encontramos ante una doble implicación, en la que la implicación hacia la izquierda sabemos que es cierto por un resultado 
+    visto en clase, pero el recíproco no es siempre cierto. Para ello consideremos el siguiente contraejemplo:
 
-    Partamos de la hipótesis de que nos encontramos en una superficie $S$ cualquiera, pero en nuestro caso vamos a considerar un plano. Supongamos dos curvas, $\alpha_1(t)$ y $\alpha_2(t)$
-    ambas dos rectas contenidas en el plano, y además no paralelas con intersección en el plano (en resumen, dos rectas secantes en el plano que las contiene). 
-    \\ \\
+    Partamos de la hipótesis de que nos encontramos en una superficie $S$ para la cual vamos a considerar $S=\mathds{S}^2$ la esfera unidad de radio 1 y centrada en el origen. 
+    Conideremos también un punto de la superficie $p_0 = (1,0,0)$, y tomemos la siguiente parametrización que cubra a dicho punto
+    \begin{equation*}
+        X: I\times \R \longrightarrow \mathds{S}^2 \subset \R^3 \\
+        X(u,v) = \left(\sqrt{1-u^2-v^2}, u, v\right)
+    \end{equation*} 
+    Con la cual calculamos ahora las bases del plano tangente, que vienen dadas por
+    \begin{equation*}
+        X_u = \left(\frac{-u}{\sqrt{1-u^2-v^2}}, 1, 0\right) \\
+        X_v = \left(\frac{-v}{\sqrt{1-u^2-v^2}}, 0, 1\right)    
+    \end{equation*}
+    Y calculemos con ella la función curvatura de Gauss, que viene dada por la siguiente fórmula
+    \begin{equation*}
+        X_u \times X_v = \left(1, \frac{u}{\sqrt{1-u^2-v^2}}, \frac{v}{\sqrt{1-u^2-v^2}}\right), \quad\\
+        N(X(u,v)) = \frac{X_u \times X_v}{|X_u \times X_v|} = \left(\sqrt{1-u^2-v^2}, u, v\right)
+    \end{equation*}
+    Ahora que tenemos todas las herramientas, vamos a definir dos curvas $\alpha(t)$ y $\beta(t)$ tales que cumplan las siguientes condiciones
+    \begin{equation*}
+        \alpha(0) = \beta(0) = p_0 = (1,0,0) \\
+        \alpha'(0) = (0,1,0) \\
+        \beta' (0) = (0,0,1)
+    \end{equation*}
+    Por tanto, en estas condiciones podemos ver que nos entcontramos ante una superficie en la que tenemos dos curvas que se cortan, cuya curvatura normal es la misma en el 
+    punto de intersección, $N(\alpha(0)) = N(\beta(0)) = (1,0,0)$, pero cuyas tangentes hemos visto que son distintas, por lo que el enunciado dado no es cierto.
 
     \textbf{Ejercicio 3. } \\
 
