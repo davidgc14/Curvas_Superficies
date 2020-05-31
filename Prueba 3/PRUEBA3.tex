@@ -54,7 +54,7 @@
     \end{equation*}
     siendo $S_1$ y $S_2$ el cilindro y el catenoide, respectivamente. Calculemos primero la imagen esférica del cilindro. para ello consideramos el conjunto
     $$S_1 = \{\alpha(t) + v\vec{e}_3 \thinspace : \thinspace t\in I, \thinspace v\in \R\}$$
-    Donde $\alpha(t)$ viene dado por la elipse $\alpha(t) = (a\cos(t), b\sin(t), 0), \thinspace a,b\in \R$. Consideremos por tanto la siguiente aplicación, en la que nos basaremos para 
+    Donde $\alpha(t)$ viene dado por la elipse $\alpha(t) = (a\cos(t), b\sin(t), 0), \thinspace a,b\in \R$. Consideremos por tanto la siguiente parametrización, en la que nos basaremos para 
     la construcción de $N_1$.
     \begin{equation*}
         \begin{aligned}
@@ -71,13 +71,13 @@
     obtenemos fácilmente la fórmula de Gauss:
     $$N_1(F(t,v)) = \frac{F_t \times F_v}{\left|F_t \times F_v\right|} = \frac{1}{\sqrt{a^2\sin^2(t) + b^2\cos^2(t)}} (b\cos(t), a\sin(t), 0)$$
     Donde podemos observar que dicha aplicación de Gauss lleva cualquier cilindro elíptico a la circunferencia obtenida de intersecar la esfera $\mathds{S}^2$ con el plano $z=0$. Calculemos
-    ahora la aplicación de Gauss para el catenoide. Sabemos que se trata de una superficie de revolución, al rotar sobre (en este caso) el eje $z$ una catenaria de la forma
-    $\alpha(t) = (a\cosh(t), 0, bt), \thinspace b,a\in \R-\{0\}$. Por ello, obtengamos la imagen esférica del campo normal unitario de nuestra catenaria (que será nuestra curva generatriz),
+    ahora la aplicación de Gauss para el catenoide. Sabemos que se trata de una superficie de revolución, al rotar (en este caso) sobre el eje $z$ una catenaria de la forma
+    $\alpha(t) = (a\cosh(t), 0, bt), \thinspace \thinspace a,b\in \R-\{0\}$. Por ello, obtengamos la imagen esférica del campo normal unitario de nuestra catenaria (que será nuestra curva generatriz),
     la cual rotaremos posteriormente para obtener así la imagen esférica de toda la superficie. Para ello consideremos su referencia de Frenet, la cual viene dada por
     $$N(t) = \left(\frac{\sinh(t)}{\cosh(t)}, 0, \frac{1}{\cosh(t)} \right)$$
-    El cual se trata de una semicircunferencia sin los extremos, y que por tanto al rotarla obtenemos
+    Con la que podemos ver que se trata de una semicircunferencia sin los extremos, y que por tanto al rotarla obtenemos
     que la imagen esférica del catenoide es toda la esfera $\mathds{S}^2$ sin las antípodas que pasan por el eje $z$, es decir, $\mathds{S}^2 - \{(0,0,1), (0,0,-1)\}$, y por tanto podemos ver que,
-    a pesar de ser dos superficies difeomorfas, poseen imágenes esféricas diferentes.\\ \\
+    a pesar de ser dos superficies difeomorfas, poseen imágenes esféricas distintas.\\ \\
 
     \textbf{Ejercicio 2. } \\
 
@@ -111,7 +111,7 @@
 
     \textbf{Ejercicio 4. } \\
    
-    Calculemos primero sus curvaturas. Para ello definamos primero la función siguiente, que será necesaria para el desarrollo del ejercicio
+    Calculemos primero sus curvaturas. Para ello definamos primero la función siguiente
     \begin{equation*}
         \begin{aligned}
             & F:\R^2 \rightarrow C_{\alpha} \subset \R^3 \\
@@ -145,38 +145,38 @@
     \end{equation*}
     Y $N$ es la aplicación de Gauss, la cual se calcula de la siguiente manera:
     \begin{equation*}
-        F_t \times F_v = (2\sinh(t), -1, 0)
+        F_t \times F_v = (2\sinh(t), -1, 0) \\
         N(F(t,v)) = \frac{F_t \times F_v}{|F_t \times F_v|} = \frac{1}{|\alpha'(t)|} (2\sinh(t), -1, 0)
     \end{equation*}
     Por lo tanto, realizando los productos pertinentes obtenemos la matriz $A$ del operador forma
     \begin{equation*}
-        A = (4\sinh^2(t) +1)
+        A = \frac{1}{4\sinh^2(t) +1}
         \begin{pmatrix}
             1 & 0\\
             0 & 4\sinh^2(t) +1
         \end{pmatrix}
         \begin{pmatrix}
-            \frac{2\cosh(t)}{|\alpha'(t)|} & 0 \\
+            -\frac{2\cosh(t)}{|\alpha'(t)|} & 0 \\
             0 & 0
         \end{pmatrix} = 
         \begin{pmatrix}
-            2\cosh(t)|\alpha'(t)| & 0\\
-            0 & 0 \\
+            -\frac{2\cosh(t)}{|\alpha'(t)|} & 0 \\
+            0 & 0
         \end{pmatrix}
     \end{equation*}
 
     $$\Rightarrow A =
     \begin{pmatrix}
-        2\cosh(t)|\alpha'(t)| & 0\\
-        0 & 0 \\  
+        -\frac{2\cosh(t)}{|\alpha'(t)|} & 0 \\
+        0 & 0
     \end{pmatrix}
     $$
     Como bien sabemos, las curvaturas principales vienen dadas por los valores propios de la matriz asociada al operador forma, que en nuestro caso es fácil obtener 
-    ya que la matriz se encuentra en su forma diagonal, por lo que tenemos $k_1 = 2\cosh(t)|\alpha'(t)| $ y $k_2 = 0$. Ahora, para la curvatura de Gauss ($K$) y la curvatura
+    ya que la matriz se encuentra en su forma diagonal, por lo que tenemos $k_1 = -\frac{2\cosh(t)}{|\alpha'(t)|} $ y $k_2 = 0$. Ahora, para la curvatura de Gauss ($K$) y la curvatura
     media ($H$) basta con considerar el determinante y la traza de la matriz, respectivamente, de la siguiente manera:
     \begin{equation*}
         K = det(A) = k_1 k_2 = 0 \\
-        H = \frac{1}{2}(k_1 + k_2) = \frac{1}{2}k_1 = \cosh(t)|\alpha'(t)| 
+        H = \frac{1}{2}(k_1 + k_2) = \frac{1}{2}k_1 = -\frac{\cosh(t)}{|\alpha'(t)|}
     \end{equation*} 
 
     Para calcular las direcciones principales, basta con ver que nos encontramos en un caso particular, en el que $\langle F_{tv}, N \rangle = \langle F_{t}, F_v \rangle = 0$
@@ -186,7 +186,9 @@
 
     Es verdadero. Basta con ver que un paralelo de una superficie de revolución es el resultado de girar un cierto punto $\alpha(t_0)$ de la curva generatriz de la superficie con respecto
     al eje de giro. Por ello, al clasificar un cierto punto de dicha curva generatriz, que es clasificado mediante la función curvatura de Gauss, vemos que $K$ no depende del ángulo rotado,
-    y por tanto la clasificación del punto se mantiene a lo largo del paralelo. Como ejemplo podemos considerar el toro elíptico calculado en el \textit{Ejercicio 3}, en el cual vimos que 
+    y por tanto la clasificación del punto se mantiene a lo largo del paralelo. 
+    
+    Como ejemplo podemos considerar el toro elíptico calculado en el \textit{Ejercicio 3}, en el cual vimos que 
     cuando la curva generatriz tomaba el valor $\frac{\pi}{2}$ (y por tanto considerábamos dicho punto $\alpha(\frac{\pi}{2})$), vimos que el valor de la curvatura de Gauss era nula, y concluíamos
     que, tanto dicho punto como todo su paralelo, estaban constituidos por puntos parabólicos. \\ \\
 
@@ -259,27 +261,36 @@
     es positivo y distinto de cero $\forall (u,v) \in \R^2$, por lo tanto preocupémonos en estudiar el signo del numerador (el cual nos proporcionará el signo del determinante). 
     Vemos claramente que el determinante se anula cuando al menos uno de los dos parámetros $u$ ó $v$ toma el valor $0$. Consideramos por tanto tres casos a 
     distinguir para estudiar cuando el determinante es nulo:
+    \begin{enumerate}
+        \item[$u=0, \thinspace v\neq 0$] Sustituyendo en la matriz $A$ podemos ver que resulta una matriz diagonal con un valor propio no nulo, 
+                $k_1 = 0$, $k_2 = \frac{6v}{(9v^4 + 1)^{3/2}}$, y por lo tanto todo punto de la forma $(0,v)$ es un punto parabólico.
+        \item[$v=0, \thinspace u\neq 0$] Sustituyendo en la matriz $A$ podemos ver que resulta una matriz diagonal con un valor propio no nulo, 
+                $k_1 = \frac{6u}{(9v^4 + 1)^{3/2}}$, $k_2 = 0$, y por lo tanto todo punto de la forma $(u,0)$ es un punto parabólico.
+        \item[$u = v = 0$] Este es un caso un poco más sutil, ya que al sustituir en la matriz $A$ vemos que la matriz obtenida es una matriz nula, es decir,
+                con ambos valores propios nulos, por lo que el punto $(0,0)$ se trata de un punto plano. 
+    \end{enumerate}
+    Podemos afirmar que en el resto de situaciones el determinante será no nulo, y por ello además sus valores propios serán de la misma forma no nulos.
+    Continuando con la clasificación, vemos de manera sencilla que cuando ambos parámetros se encunetren en una de las dos siguientes situaciones, 
     \begin{equation*}
-        u=0, \thinspace v\neq 0 \\
-        v=0, \thinspace u\neq 0 \\
-        u = v = 0
-    \end{equation*}
-    Vemos fácilmente que en cualquiera de los tres casos, la matriz $A$ resultaría ser la matriz nula, y por tanto tendría sus dos valores propios (sus dos curvaturas principales)
-    nulas, y por lo que podemos concluir que dichos puntos son puntos planos. Vemos además de manera sencilla que cuando ambos parámetros se encunetren en la situación 
-    \begin{equation*}
-        u<0, \thinspace v>0 \\
+        v>0, \thinspace u<0 \\
         u>0, \thinspace v<0
     \end{equation*}
-    el determinante será de signo negativo, y entonces nos encontraremos ante un punto hiperbólico. De forma similar podemos ver que cuando ambos parámetros tengan el mismo signo,
-    es decir, en los casos
+    la curvatura de Gauss será de signo negativo, y entonces nos encontraremos ante un punto hiperbólico. De forma similar podemos ver que cuando ambos parámetros 
+    tengan el mismo signo, es decir, en los casos
     \begin{equation*}
         u>0, \thinspace v>0 \\
         u<0, \thinspace v<0
     \end{equation*}
-    el signo del determinante será positivo, y por tanto dicho punto será elíptico. En resumen:
+    el valor de la curvatura de Gauss será positiva, y por tanto dicho punto será elíptico. En resumen:
     \begin{itemize}
-        \item Punto plano: $(u,v) \in \{(x,y)/ \thinspace xy=0\}$ 
+        \item Punto plano: $(u,v) = (0,0)$
+        \item Punto parabólico: $(u,v) \in \{(x,y)/ \quad xy=0, \thinspace (x,y)\neq (0,0)\}$ 
         \item Punto elíptico: $(u,v) \in \thinspace \{\R^+ \times \R^+\} \cup \{\R^- \times \R^-\}$
         \item Punto hiperbólico: $(u,v) \in \thinspace \{\R^+ \times \R^-\} \cup \{\R^- \times \R^+\}$
     \end{itemize}
+    \begin{figure}
+        \centering
+        \includegraphics[scale = 0.2]{grafica.png}
+        \caption{Distribución de puntos en el plano}
+    \end{figure}
 \end{document}
