@@ -13,6 +13,7 @@
 \usepackage{listings}
 \usepackage{tikz}
 \usepackage{dsfont} %Numeros reales, naturales...
+\usepackage{cancel}
 
 %\graphicspath{{images/}}
 \newcommand*{\QED}{\hfill\ensuremath{\square}}
@@ -24,15 +25,18 @@
 
 
 \author{David García Curbelo}
-\title{Curvas y Superficies, Prueba 3 Opción A}
-\date{Grado en Matemáticas, Grupo A}
+\title{Ecuaciones}
 
 \pagestyle{empty}
 
 
-
 \def\R{\mathds{R}}
+\def\Z{\mathds{Z}}
+\def\N{\mathds{N}}
+
 \def\sup{$^2$}
+
+\def\next{\quad \Rightarrow \quad}
 
 \begin{document}
     \maketitle
@@ -93,15 +97,17 @@
     $$A=
     \begin{pmatrix}
         k(t) & 0 \\
-        0 & \frac{\alpha_3'(t)}{\alpha_1(t)}
+        0 & \frac{\alpha_3'(t)}{\alpha_1(t) |\alpha'(t)|}
     \end{pmatrix}
     $$
-    donde $k(t)$ es la curvatura de la curva $\alpha(t)$, la cual sabemos que viene dada por $k(t)=\frac{ab}{(a^2\sin^2(t) + b^2 \cos^2(t))^{\frac{3}{2}}}$, que además es positiva
-    para todo $t\in \R$. Por ello, como sabemos que las función de curvatura de Gauss viene dada por el producto de los valores propios de dicha matriz, vemos que
+    por ser una superficie de revolución, donde $k(t)$ es la curvatura de la curva $\alpha(t)$, la cual sabemos que viene dada por $k(t)=\frac{ab}{(a^2\sin^2(t) + b^2 \cos^2(t))^{\frac{3}{2}}}$, que además es positiva
+    para todo $t\in \R$. Por ello, como sabemos que las función de curvatura de Gauss viene dada por el producto de los valores propios de dicha matriz (o lo que es lo mismo, por su determinante), vemos que
     $$K = \frac{ab}{(a^2\sin^2(t) + b^2 \cos^2(t))^{\frac{3}{2}}} \frac{\alpha_3'(t)}{\alpha_1(t)} = \frac{ab^2 \cos(t)}{(R + a\cos(t))(a^2\sin^2(t) + b^2 \cos^2(t))^{\frac{3}{2}}}$$
     Estudiando el signo de dicha igualdad, observamos que cuando $t=\frac{\pi}{2}$ ó $t=-\frac{\pi}{2}$, tenemos que $K=0$, por lo que los paralelos generados al girar estos dos puntos
     de la curva $\alpha(t)$ están compuestos por puntos parabólicos. Por ello podemos concluir que un toro elíptico NO tiene todos sus puntos elípticos, ya que contiene otros 
     tipos de puntos. \\ \\
+
+    \newpage
 
     \textbf{Ejercicio 4. } \\
    
@@ -112,7 +118,8 @@
             &F(t,v) = (t, 2\cosh(t), v)
         \end{aligned}
     \end{equation*}
-    siendo $C_{\alpha}$ la superficie que queremos estudiar. Consideremos a continuación la matriz del operador forma asociada al cilindro que estamos estudiando, la cual viene dada por
+    siendo $C_{\alpha}$ la superficie que queremos estudiar. Consideremos a continuación la matriz asociada al operador forma del cilindro que estamos estudiando, 
+    la cual viene dada por
     \begin{equation*}
         A =
         \begin{pmatrix}
@@ -129,7 +136,51 @@
             \langle F_{vt}, N \rangle & \langle F_{vv}, N \rangle
         \end{pmatrix}
     \end{equation*}
+    Donde $F_t$, $F_v$, $F_{tv}$, $F_{vv}$, $F_{vt}$ y $F_{tt}$ vienen dados por
+    \begin{equation*}
+        F_t = (1, 2\sinh(t), 0) \\
+        F_v = (0, 0, 1) \\
+        F_{tt} = (0, 2\cosh(t), 0) \\
+        F_{tv} = F_{vt} = F_{vv} = (0, 0, 0)
+    \end{equation*}
+    Y $N$ es la aplicación de Gauss, la cual se calcula de la siguiente manera:
+    \begin{equation*}
+        F_t \times F_v = (2\sinh(t), -1, 0)
+        N(F(t,v)) = \frac{F_t \times F_v}{|F_t \times F_v|} = \frac{1}{|\alpha'(t)|} (2\sinh(t), -1, 0)
+    \end{equation*}
+    Por lo tanto, realizando los productos pertinentes obtenemos la matriz $A$ del operador forma
+    \begin{equation*}
+        A = (4\sinh^2(t) +1)
+        \begin{pmatrix}
+            1 & 0\\
+            0 & 4\sinh^2(t) +1
+        \end{pmatrix}
+        \begin{pmatrix}
+            \frac{2\cosh(t)}{|\alpha'(t)|} & 0 \\
+            0 & 0
+        \end{pmatrix} = 
+        \begin{pmatrix}
+            2\cosh(t)|\alpha'(t)| & 0\\
+            0 & 0 \\
+        \end{pmatrix}
+    \end{equation*}
 
+    $$\Rightarrow A =
+    \begin{pmatrix}
+        2\cosh(t)|\alpha'(t)| & 0\\
+        0 & 0 \\  
+    \end{pmatrix}
+    $$
+    Como bien sabemos, las curvaturas principales vienen dadas por los valores propios de la matriz asociada al operador forma, que en nuestro caso es fácil obtener 
+    ya que la matriz se encuentra en su forma diagonal, por lo que tenemos $k_1 = 2\cosh(t)|\alpha'(t)| $ y $k_2 = 0$. Ahora, para la curvatura de Gauss ($K$) y la curvatura
+    media ($H$) basta con considerar el determinante y la traza de la matriz, respectivamente, de la siguiente manera:
+    \begin{equation*}
+        K = det(A) = k_1 k_2 = 0 \\
+        H = \frac{1}{2}(k_1 + k_2) = \frac{1}{2}k_1 = \cosh(t)|\alpha'(t)| 
+    \end{equation*} 
+
+    Para calcular las direcciones principales, basta con ver que nos encontramos en un caso particular, en el que $\langle F_{tv}, N \rangle = \langle F_{t}, F_v \rangle = 0$
+    y por tanto tenemos que $F_t$ y $F_v$ son las direcciones principales en cada punto de la parametrización.\\ \\
 
     \textbf{Ejercicio 5. } \\
 
@@ -142,7 +193,6 @@
     \textbf{Ejercicio 6. } \\
 
     Para clasificar los puntos de dicho grafo necesitamos saber el signo de la función curvatura de Gauss, y a partir de ella y de sus curvaturas principales podremos clasificar cualquier punto
-    de la superficie dada. Para 
-
+    de la superficie dada. Para ello primero tenemos que parametrizar la superficie dada por el grafo $h$, la cual nos queda de la siguiente manera
 
 \end{document}
