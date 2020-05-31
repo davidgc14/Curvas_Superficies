@@ -49,22 +49,27 @@
         N_2: S_2 \longrightarrow \mathds{S}^2
     \end{equation*}
     siendo $S_1$ y $S_2$ el cilindro y el catenoide, respectivamente. Calculemos primero la imagen esférica del cilindro. para ello consideramos el conjunto
-    $$C_{\alpha} = \{\alpha(t) + v\vec{e}_3 \thinspace : \thinspace t\in I, \thinspace v\in \R\}$$
+    $$S_1 = \{\alpha(t) + v\vec{e}_3 \thinspace : \thinspace t\in I, \thinspace v\in \R\}$$
     Donde $\alpha(t)$ viene dado por la elipse $\alpha(t) = (a\cos(t), b\sin(t), 0), \thinspace a,b\in \R$. Consideremos por tanto la siguiente aplicación, en la que nos basaremos para 
     la construcción de $N_1$.
     \begin{equation*}
         \begin{aligned}
-            & F:I\times \R \rightarrow C_{\alpha} \subset \R^3 \\
+            & F:\R^2 \rightarrow S_1 \subset \R^3 \\
             &F(t,v) = (a\cos(t), b\sin(t), v)
         \end{aligned}
     \end{equation*}
-    
-    Por tanto obtenemos la fórmula de Gauss:
+    Y realizando los siguientes cálculos
+    \begin{equation*}
+        F_t = (-a\sin(t), b\cos(t), 0) \\
+        F_v = (0,0,1) \\
+        F_t \times F_v = (b\cos(t), a\sin(t), 0)
+    \end{equation*}
+    obtenemos fácilmente la fórmula de Gauss:
     $$N_1(F(t,v)) = \frac{F_t \times F_v}{\left|F_t \times F_v\right|} = \frac{1}{\sqrt{a^2\sin^2(t) + b^2\cos^2(t)}} (b\cos(t), a\sin(t), 0)$$
     Donde podemos observar que dicha aplicación de Gauss lleva cualquier cilindro elíptico a la circunferencia obtenida de intersecar la esfera $\mathds{S}^2$ con el plano $z=0$. Calculemos
     ahora la aplicación de Gauss para el catenoide. Sabemos que se trata de una superficie de revolución, al rotar sobre (en este caso) el eje $z$ una catenaria de la forma
-    $\alpha(t) = (a\cosh(t), 0, bt), \thinspace b,a\in \R-\{0\}$. Por ello, obtengamos la imagen esférica del campo normal unitario de nuestra catenaria, que tendrá función de curva generatriz,
-    el cual rotaremos posteriormente para obtener así la imagen esférica de toda la superficie. Para ello consideremos su referencia de Frenet, la cual viene dada por
+    $\alpha(t) = (a\cosh(t), 0, bt), \thinspace b,a\in \R-\{0\}$. Por ello, obtengamos la imagen esférica del campo normal unitario de nuestra catenaria (que será nuestra curva generatriz),
+    la cual rotaremos posteriormente para obtener así la imagen esférica de toda la superficie. Para ello consideremos su referencia de Frenet, la cual viene dada por
     $$N(t) = \left(\frac{\sinh(t)}{\cosh(t)}, 0, \frac{1}{\cosh(t)} \right)$$
     El cual se trata de una semicircunferencia sin los extremos, y que por tanto al rotarla obtenemos
     que la imagen esférica del catenoide es toda la esfera $\mathds{S}^2$ sin las antípodas que pasan por el eje $z$, es decir, $\mathds{S}^2 - \{(0,0,1), (0,0,-1)\}$, y por tanto podemos ver que,
@@ -78,11 +83,12 @@
 
     Partamos de la hipótesis de que nos encontramos en una superficie $S$ cualquiera, pero en nuestro caso vamos a considerar un plano. Supongamos dos curvas, $\alpha_1(t)$ y $\alpha_2(t)$
     ambas dos rectas contenidas en el plano, y además no paralelas con intersección en el plano (en resumen, dos rectas secantes en el plano que las contiene). 
+    \\ \\
 
     \textbf{Ejercicio 3. } \\
 
     Para poder comprobar la veracidad o falsedad del enunciado, necesitamos saber la función curvatura de Gauss en toda la superficie, para poder así clasificar sus puntos. Sabemos que el 
-    toro elíptico es una superficie de revolución resultado de rotar con respecto al eje $z$ la curva $\alpha(t) = (R + a\cos(t), 0, b\sin(t))$, donde $R>a, \thinspace R,a,b > 0$. Sabiendo esto,
+    toro elíptico es una superficie de revolución resultado de rotar con respecto al eje $z$ la curva $\alpha(t) = (R + a\cos(t), 0, b\sin(t))$, donde $R>a, \thinspace a \neq b$. Sabiendo esto,
     podemos definir la matriz del operador forma como sigue 
     $$A=
     \begin{pmatrix}
@@ -113,11 +119,17 @@
             a_{11} & a_{12} \\
             a_{21} & a_{22}
         \end{pmatrix}
-        =
+        = \frac{1}{\langle F_t, F_t \rangle \langle F_v, F_v \rangle - \langle F_t, F_v \rangle ^2}
         \begin{pmatrix}
-            
+            \langle F_v, F_v \rangle & - \langle F_t, F_v \rangle \\
+            -\langle F_t, F_v \rangle & \langle F_t, F_t \rangle
+        \end{pmatrix}
+        \begin{pmatrix}
+            \langle F_{tt}, N \rangle & \langle F_{tv}, N \rangle \\
+            \langle F_{vt}, N \rangle & \langle F_{vv}, N \rangle
         \end{pmatrix}
     \end{equation*}
+
 
     \textbf{Ejercicio 5. } \\
 
