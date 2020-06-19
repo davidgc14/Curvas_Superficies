@@ -1,0 +1,135 @@
+\documentclass[fleqn]{article}
+
+\usepackage{mathexam}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{systeme}
+\usepackage{microtype}
+\usepackage{multirow}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{dsfont} %Numeros reales, naturales...
+
+%\graphicspath{{images/}}
+\newcommand*{\qed}{\hfill\ensuremath{\square}}
+
+%Estructura de ecuaciones
+\setlength{\textwidth}{15cm} \setlength{\oddsidemargin}{5mm}
+\setlength{\textheight}{23cm} \setlength{\topmargin}{-1cm}
+
+
+
+\author{David García Curbelo}
+\title{Curvas y Superficies}
+\date{Grado en Matemáticas, Grupo A}
+
+\pagestyle{empty}
+
+
+
+\def\R{\mathds{R}}
+\def\sup{$^2$}
+
+\begin{document}
+    
+    \maketitle
+    \setcounter{page}{1}
+    \pagestyle{plain}
+
+    {\bf{Ejercicio 3:}} Se considera la espiral logarítmica $\alpha : \R \longrightarrow \R$ definida por
+    $$\alpha (t) = e^t \left(\cos t, \sin t\right)$$
+
+    \begin{itemize}
+        \item Calcula su función longitud de arco.
+        \item Calcula su función curvatura.
+        \item Comprueba que los vectores de posición y tangente en cada punto forman un ángulo constante.\\ \\
+    \end{itemize}
+
+    {\bf{Solución:}} Para calcular su función longitud de arco consideramos primero la parametrización por el
+    arco de la curva $\alpha (t)$. Sabemos que la parametrización viene dada por 
+    $s(t) = L _{t_0}^t (\alpha) = \int _{t_0}^t |\alpha '(v)| dv$
+
+    $$\alpha '(t) =\left(e^t \cos t - e^t \sin t, e^t\sin t + e^t\cos t\right)$$
+    $$|\alpha '(t)|=e^t \sqrt{2}$$
+    Y por lo tanto, tomando $t_0=0$ obtenemos 
+    $$s(t) = \int _{0}^t |e^v \sqrt{2}| dv = \sqrt{2}(e^t-1)$$
+    Entonces $s=\sqrt{2}(e^t-1)$ y por lo tanto $t=\ln \left(\frac{\sqrt{2}}{2}s+1\right)$, y obtenemos que la 
+    función 
+    $$\beta (s)=\left(\frac{\sqrt{2}}{2}s+1\right) \left(\cos \left(\ln \left(\frac{\sqrt{2}}{2}s+1\right)\right), 
+    \sin \left(\ln \left(\frac{\sqrt{2}}{2}s+1\right)\right)\right)$$
+    es la reparametrización por el arco de la curva $\alpha (t)$, y por lo tanto su función longitud de arco. \\ \\
+
+    Calculamos ahora su función curvatura. La curvatura de nuestra curva p.p.a $\beta (s)$ viene dada por las 
+    ecuaciones de Frenet de la curva:
+    \begin{equation*}
+        \left.
+            \begin{aligned}
+                T'(s)=k(s)N(s)\\
+                N'(s)=-k(s)T(s)
+            \end{aligned}
+        \right\}
+    \end{equation*}
+    Para el que sabemos que $T(s)$ y $N(s)$ son los vectores tangente y normal de la curva respectivamente, y $k(s)$
+    la función curvatura. Como el vector tangente viene dado por la derivada de la curva, obtenemos $T(s)=\beta '(s)$
+    y por tanto $T'(s)=\beta ''(s)$. Como el vector normal es perpendicular al vector tangente, podemos obtener dicho 
+    vector mediante $N(s)=J(T(s))=J((x,y))=(-y,x)$. Transcribimos los datos que hemos obtenido:
+    {\small{$$T(s)= \frac{\sqrt{2}}{2} \left(\cos\left\{\ln \left(\frac{\sqrt{2}}{2}s +1\right)\right\} - \sin\left\{\ln \left(\frac{\sqrt{2}}{2}s +1\right)\right\},
+    \sin\left\{\ln \left(\frac{\sqrt{2}}{2}s +1\right)\right\} + \cos\left\{\ln \left(\frac{\sqrt{2}}{2}s +1\right)\right\} \right)$$}
+
+    \small{$$T'(s)= \frac{1}{s\sqrt{2}+2} \left(-\sin\left\{\ln \left(\frac{\sqrt{2}}{2}s +1\right)\right\} - \cos\left\{\ln \left(\frac{\sqrt{2}}{2}s +1\right)\right\},
+    \cos\left\{\ln \left(\frac{\sqrt{2}}{2}s +1\right)\right\} - \sin\left\{\ln \left(\frac{\sqrt{2}}{2}s +1\right)\right\} \right) $$}
+}
+    Sabemos también que $N(s)=J(T(s))$, y tomando la igualdad $T'(s)=k(s)N(s)$, reescribiendo queda $\frac{1}{k(s)}T'(s)=N(s)$ donde obtenemos
+    $$\frac{1}{k(s)}=\left(s\sqrt{2}+2\right)\frac{\sqrt{2}}{2}=s+\sqrt{2}$$
+    $$k(s)=\frac{1}{s+\sqrt{2}}$$
+    Con la que obtenemos la función curvatura que buscábamos.\\ \\
+
+    Para el tercer apartado tomamos el vector posición dado por $ \alpha=e^t \left(\cos t, \sin t\right)$ y su vector tangente  en función de $t$, dado por
+    $T(t)=\frac{\sqrt{2}}{2} \left(\cos t - \sin t, \sin t + \cos t\right)$. Calculamos el ángulo que forman ambos mediante 
+    $\cos \theta = \frac{\alpha(t) \cdot T(t)}{|\alpha(t)| \cdot |T(t)|}$
+    $$\cos \theta = \frac{\frac{\sqrt{2}}{2}e^t(\cos^2t + \sin^2t)}{\sqrt{e^{2t}(\cos^2t + \sin^2t)\frac{1}{2}(\cos^2t + \sin^2t)}}$$
+    $$\cos \theta = \frac{\frac{\sqrt{2}}{2}e^t}{\sqrt{\frac{1}{2}e^{2t}}}$$
+    $$\theta=\frac{\pi}{2}$$
+    Luego el angulo es constante, ya que no depende del tiempo.\qed 
+   
+    \newpage
+
+    {\bf{Ejercicio 5:}} Sea $\alpha : \R \rightarrow \R ^3$ una curva regular parametrizada como 
+    $$\alpha(t)=\left(1 + \cos t, \sin t, 2(1-\cos t)\right)$$
+    ¿Es una curva plana? Si lo es, calcula el plano que la contiene.\\ \\
+
+    {\bf{Solución:}} Para ver si es plana bastará con ver si su torsión o su curvatura son nulas en todo su dominio de definición con respecto
+    a un determinado plano (el plano osculador). Para ello calculamos sus vectores tangente, normal y binormal
+    $$T(t)=\alpha '(t)=\left(-\sin t, \cos t, 2\sin t\right)$$
+    $$T'(t)=\left(-\cos t,- \sin t, 2\cos t\right)$$
+    $$N(t)=\frac{T'(t)}{|T'(t)|}=\frac{\left(-\cos t,- \sin t, 2\cos t\right)}{\sqrt{1+4\cos^2 t}}$$
+    Donde vemos que la curvatura $k(t)$ viene dada por
+    $$k(t)=|T'(t)|=\sqrt{1+4\cos^2 t}$$
+    Y el binormal por el producto vectorial de los vectores tangente y normal
+    $$B(t)=T(t)\times N(t)=\frac{1}{\sqrt{1+4\cos^2 t}} \left|
+    \begin{matrix}
+        \hat{x} & \hat{y} & \hat{z} \\
+        -\sin t & \cos t & 2\sin t \\
+        -\cos t & -\sin t & 2\cos t \\
+    \end{matrix} \right|
+    = \frac{1}{\sqrt{1+4\cos^2 t}} (\left(2,0,1\right)) $$
+    
+    Como sabemos, el binormal es el vector normal del plano osculador formado por los vectores tangencial y normal. Veamos si este plano tiene
+    alguna dependencia en $t$. Si dicho plano no tiene dependencia en $t$ implicará que los vectores tangente y normal se mueven en un mismo plano
+    al recorrer la curva $\alpha(t)$, y que por tanto la torsión sera nula (y por tanto la curva será plana). Tomamos un punto cualquiera de la curva
+    $(x_0, y_0, z_0)$. La ecuación de dicho plano viene dada por
+    $$B_1(t)(x-x_0) + B_2(t)(y-y_0) + B_3(t)(z-z_0)=0$$
+    $$\frac{2}{\sqrt{1+4\cos^2 t}}(x-x_0) + \frac{0}{\sqrt{1+4\cos^2 t}}(y-y_0) + \frac{1}{\sqrt{1+4\cos^2 t}}(z-z_0)=0$$
+    $$\frac{2}{\sqrt{1+4\cos^2 t}}(x-x_0) + \frac{1}{\sqrt{1+4\cos^2 t}}(z-z_0)=0$$
+    $$2(x-x_0) + 1(z-z_0)=0$$
+
+    Vemos que el plano no tiene dependencia en $t$, por lo tanto su torsión es nula y podemos afirmar que se trata de una curva plana.
+    Además, tomando un punto cualquiera de la curva, por ejemplo $\alpha(0)=(2,0,0)=(x_0, y_0, z_0)$ y sustituyéndolo en el plano antes calculado
+
+    $$2x+z=4$$
+    obtenemos el plano osculador, y por tanto el plano que contiene a la curva plana.
+
+
+\end{document}

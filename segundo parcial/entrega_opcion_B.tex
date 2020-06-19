@@ -1,0 +1,192 @@
+\documentclass[fleqn]{article}
+
+%\pgfplotsset{compat=1.17}
+
+\usepackage{mathexam}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{systeme}
+\usepackage{microtype}
+\usepackage{multirow}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{dsfont} %Numeros reales, naturales...
+\usepackage{cancel}
+\usepackage{verbatim} %Comentario de parrafo
+
+%\graphicspath{{images/}}
+\newcommand*{\QED}{\hfill\ensuremath{\square}}
+
+%Estructura de ecuaciones
+\setlength{\textwidth}{15cm} \setlength{\oddsidemargin}{5mm}
+\setlength{\textheight}{23cm} \setlength{\topmargin}{-1cm}
+
+
+
+\title{Curvas y Superficies}
+\author{David García Curbelo}
+\date{Grado en Matemáticas, Grupo A}
+
+\pagestyle{empty}
+
+
+\def\R{\mathds{R}}
+\def\Z{\mathds{Z}}
+\def\N{\mathds{N}}
+\def\sup{$^2$}
+
+
+\begin{document}
+        \maketitle
+        \setcounter{page}{1}
+        \pagestyle{plain}
+
+        \textbf{Ejercicio 1. } 
+        
+        Consideremos una superficie cualquiera $S\in \R^3$ que sea regular y compacta. Para que dicha superficie sea grafo de 
+        una función diferenciable, debe de existir una parametrización 
+        $$X: \thinspace U\subset \R^2 \longrightarrow \R^3$$
+        con $U$ un abierto del plano, tal que se verifique $X(u,v) = (u, v, h(u,v))$, $\forall (u,v) \in U$, con $h(u,v)$ una función
+        diferenciable (con la que buscamos $S = X(u,v)$). Como $X$ es una parametrización, se trata de un difeomorfismo, y por lo tanto podemos afirmar
+        que $S$ es homeomorfa a un abierto $U$ del plano. Además, como la compacidad es una invariante topológica, y sabemos que $S$ es compacta, entonces tenemos que
+        $U$ tiene que ser compacto. Sin embargo, un abierto nunca puede ser compacto en $\R^n$ debido a la caracterización de la compacidad en $\R^n$, 
+        por lo que hemos llegado a una contradicción. Por ello concluimos que una superficie regular compacta no puede ser nunca el grafo de una 
+        función diferenciable.\\ \\
+
+
+
+        \textbf{Ejercicio 2. } 
+        
+        Para demostrar que ambas superficies son difeomorfas, usaremos parametrizaciones de Monge paracomprobar que ambas 
+        superficies son difeomorfas a un abierto de $\R^2$.
+
+        La catenaria viene dada por una curva 
+        $$\alpha : \R \longrightarrow \R^3, \quad \alpha(t)=(t, \cosh (t), 0)$$
+        Y por lo tanto, el cilindro sobre la catenaria se representa mediante el siguiente conjunto
+        $$S_1 = \{\alpha(t) + v\cdot (0,0,1) \thinspace : \thinspace t,v \in \R\}$$
+        Por ello, vamos a continuación a proceder a la construcción de una parametrización $X_1$ que cubra a toda la superficie $S_1$
+        $$X_1: \thinspace \R^2 \longrightarrow \R^3, \quad X_1(u,v) = (u, \cosh (u), v)$$
+        Vemos que dicha parametrización es una función continua, y además inyectiva, por lo que podemos afirmar que se trata de un homemomorfismo.
+        A continuación calcularemos el rango del Jacobiando para ver que se trata de un difeomorfismo:
+        $$J(X_1)= \left|
+                \begin{matrix}
+                        1 & \sinh(u) & 0 \\
+                        0 & 0 & 1
+                \end{matrix}
+        \right|$$
+        Del cual podemos observar fácilmente que se trata de una matriz de rango 2 (estudiando el valor del determinante formado por la primera y 
+        tercera columna). Como $X_1$ es una parametrización que cubre toda la superficie, obtenemos 
+        que $X_1$ es un difeomorfismo, y por ello $S_1$ es difeomorfa al plano $\R^2$.
+
+        A continuación realizamos el mismo estudio pero para el helicoide, con ecuación 
+        $$S_2 = \{(x,y,z) \in \R^3 \thinspace : \thinspace y/x = \tan(z)\}$$
+        Y definimos para el helicoide la siguiente parametrización
+        $$X_2 = \thinspace \R^2 \longrightarrow \R^3, \quad X_1(u,v) = (u \cos(v), u \sin (v), v)$$
+        Donde es fácil ver que $\frac{u \sin(v)}{u \cos (v)} = \tan (v)$, y por tanto obtenemos que $S_2 = X_2$, con lo que podemos afirmar que la 
+        parametrización recubre toda la superficie $S_2$. Para ver ahora que se trata efectivamente de un difeomorfismo, basta con ver (como en el 
+        apartado anterior) que sea un homeomorfismo y que el rango de su matriz Jacobiana asociada tenga rango 2. Es fácil ver que se trata de un
+        homeomorfismo, ya que se trata de una aplicación continua e inyectiva. Veamos ahora el rango de su martiz Jacobiana
+        $$J(X_1)= \left|
+                \begin{matrix}
+                        \cos(v) & \sin(v) & 0 \\
+                        -u\sin(v) & u\cos(v) & 1
+                \end{matrix}
+        \right|$$
+        Del cual podemos observar que, estudiando el determinante asociado a laas dos primeras columnas vemos que es no nulo (con $u\neq 0$), 
+        y que por tanto el Jacobiano tiene rango 2. Tenemos por ello que $X_2$ es un difeomorfismo que además que cubre toda la superficie $S_2$, y por tanto
+        $S_2$ es difeomorfa al plano $R_2$. 
+
+        Por tanto, por la porpiedad de transitividad, como ambas superficies $S_1$ y $S_2$ son difeomorfas a $\R^2$, concluimos que ambas superficies
+        son difeomorfas.\\ \\
+
+        \textbf{Ejercicio 3. }
+        
+        Para ver que las dos superficies son difeomorfas basta con encontrar una aplicación (difeomorfismo) que relacione la esfera, que tiene por 
+        ecuación 
+        $$S_1 = \{(x,y,z)\in \R^3\thinspace : \thinspace (\frac{x-2}{247})^2 + (\frac{y+1}{247})^2 + (\frac{z-1}{247})^2 = 1\}$$
+        con el elipsoide, cuya ecuación viene dada por 
+        $$S_2 = \{(x,y,z)\in \R^3\thinspace : \thinspace x^2 + (\frac{y}{6})^2 + (\frac{z}{8})^2 = 1\}.$$
+
+        Consideremos por ello una aplicación 
+
+                $$F: S_1\subset \R^3 \longrightarrow S_2\subset \R^3 , \quad \quad \quad
+                F(x,y,z)=\left(247x + 2, \thinspace y\frac{247}{6}-1, \thinspace z\frac{247}{8} + 1\right)$$
+
+        Comprobemos que efectivamente se trata de un difeomorfismo. Para ello debemos comprobar
+        que se trate de una aplicación biyectiva, y que además sea diferenciable con inversa diferenciable  (y por tanto ambas continuas). Para ello
+        bastará con ver que tanto $F$ como $F^{-1}$ son funciones diferenciables e inyectivas. 
+
+        Definimos por ello la función inversa, la cual viene definida como
+
+                $$F^{-1}: S_2\subset \R^3 \longrightarrow S_1\subset \R^3 , \quad \quad \quad
+                F^{-1}(x,y,z)=\left(\frac{x-2}{247}, \thinspace \frac{6}{247}(y+1), \thinspace \frac{8}{247}(z - 1)\right)$$
+        Vemos claramente que ambas funciones son continuas y de clase $\mathcal{C}^{\infty}$ (particularmente $\mathcal{C}^{1}$), por lo que sólo nos falta 
+        comprobar la inyectividad. Para ello veamos si se cumple $F(x,y,z)=F(x',y',z') \Rightarrow (x,y,z)=(x',y',z')$
+        $$F(x,y,z)=F(x',y',z') \Rightarrow \left(247x + 2, \thinspace y\frac{247}{6}-1, \thinspace z\frac{247}{8} + 1\right)=
+        \left(247x' + 2, \thinspace y'\frac{247}{6}-1, \thinspace z'\frac{247}{8} + 1\right)$$
+        $$\Rightarrow (x,y,z)=(x',y',z')$$
+
+        Por lo tanto vemos que es inyectiva. Realizamos el mismo procedimiento para la función inversa $F^{-1}$ y comprobamos su inyectividad
+        $$F^{-1}(x,y,z)=F^{-1}(x',y',z') \Rightarrow \left(\frac{x-2}{247}, \thinspace y\frac{6}{247}(y+1), \thinspace \frac{8}{247}(z - 1)\right) = 
+        \left(\frac{x'-2}{247}, \thinspace y'\frac{6}{247}(y+1), \thinspace \frac{8}{247}(z' - 1)\right)$$
+        $$\Rightarrow (x,y,z)=(x',y',z')$$
+
+        Por lo tanto hemos demostrado que se trata de un difeomorfismo, y por tanto la elipse y la esfera dada son dos superficies difeomorfas.\\ \\
+
+
+
+        \textbf{Ejercicio 4. } 
+        
+        Definimos una función $F$ tal que 
+        $$F:\R^3 \rightarrow \R, \quad F(x,y,z)=xyz$$
+        la cual es continua, y además diferenciable, donde el gradiente de la función viene dado por 
+        $$\nabla F(x,y,z) = (yz,xz,xy).$$
+
+        Buscamos un $a \in F(U)$ con $U$ abierto tal que $a$ sea un valor regular. Para ver que se trata de un valor regular de $F$, ha de verificarse
+        que para todo $p \in F^{-1}(a)$, el gradiente de $F$ evaluado en $p$ no se anula. Tomemos por 
+        tanto $a=1$, con el que vemos que $F^{-1}(1)=\{(x,y,z) \in \R^3 \thinspace : \thinspace xyz=1\}$. Podemos ver que, en todos los puntos del conjunto,
+        ninguna de las componentes de dichos puntos pueden valer cero, ya que no cumpliría la condición $xyz = 1$. Por ello podemos ver que el gradiente evaluado en cualquier
+        $p \in F^{-1}(a)$ viene dado por $\nabla F(p_x,p_y,p_z)$ el cual, al cumplirse $p_x,p_y,p_z \neq 0$, tenemos que 
+        $$\nabla F(x,y,z)\neq 0, \quad \forall (x,y,z) \in F^{-1}(1)$$
+        y por lo tanto podemos afirmar que $a=1$ se trata de un valor regular.
+        Por ello, tenemos que el conjunto $F^{-1}(1)=\{(x,y,z) \in \R^3 \thinspace : \thinspace xyz=1\}$ es una superficie regular, como queríamos probar.\\ \\
+
+
+        \textbf{Ejercicio 5. } 
+        
+        Si tomamos la definición de cilindro, vemos que se trata de una curva plana $\alpha$ definida en un plano, desplazada por un 
+        vector $\vec{v}$ no perteneciente al plano, construyendo así el cilindro. Consideremos por tanto cualquier punto $p$ perteneciente a la curva $\alpha$, que al haber sido 
+        trasladado por el vector, hemos obtenido una recta, la cual es la conocida por generatriz. Como podemos ver, la generatriz de cualquier cilindro
+        es una recta (por la definición de construcción del cilindro) y por ello, al estudiar el vector normal en un punto cualquiera $p$ de la curva y ser desplazado
+        dicho punto por $\vec{v}$, vemos que el vector normal se mantendrá constante a lo largo de toda la recta generada (la generatriz). Si estudiamos 
+        ahora el plano tangente en cada punto de la generatriz, al tener en cada punto el mismo vector normal, también se mantendrá constante el plano
+        tangente (la generatriz se encuentra contenida en un mismo plano, el plano tangente al cilindro), y por tanto podemos afirmar que los planos tangentes 
+        en todos los puntos a lo largo de la generatriz coinciden, como queríamos probar.\\ \\
+
+
+        \textbf{Ejercicio 6. } 
+        
+        Para el cálculo del plano tangente a dicha superficie, necesitaremos un punto en el que estudiaremos dicho plano
+        (el punto dado $p_0=(1,1,1)$) y un vector perpendicular a la superficie, que calcularemos a continuación (y que será posteriormente nuestro 
+        vector normal del plano tangente). Comprobemos que dicho punto $p_0$ pertenece a la superficie a estudiar, sustituyendo en la condición dada
+        en el conjunto a estudiar
+        $$xy + xz + yz = 3 \quad \Rightarrow \quad 1\cdot 1 + 1\cdot 1 + 1\cdot 1 = 3 \quad \Rightarrow \quad 3=3$$
+        Vemos por ello que el punto pertenece al conjunto dado, y por ello podemos proceder a calcular el plano tangente a dicho punto. Definimos 
+        una función 
+        $$F:R^3 \longrightarrow \R, \quad F(x,y,z)= xy + xz + yz - 3$$
+        Sabemos que nuestro vector gradiente evaluado en el punto $p_0$ nos dará el vector perpendicular a la superficie en dicho punto. Por ello 
+        calculamos su vector gradiente, el cual viene dado por 
+        $$\vec{\nabla} F(x,y,z)= (y+z,x+z,x+y)$$
+        Y sustituimos el punto para obtener el vector antes mencionado
+        $$\vec{\nabla} F(1,1,1)= (2,2,2) = \vec{n}$$
+        que junto con el punto $p_0$ podemos obtener fácilmente la ecuación de la recta $L=(1,1,1) + \langle 2,2,2\rangle$, o de forma simplificada, 
+        vemos que viene dada por el origen y el vector $\langle 1,1,1 \rangle$, tal que $L=\langle 1,1,1 \rangle$. Calculamos ahora el plano tangente,
+        el cual sabemos que viene dado por el plano perpendicular a la recta $L$ en el punto $(1,1,1)$, y vemos fácilmente que su ecuación es
+        $$x+y+z=D$$
+        para un cierto $D$ tal que $p_0$ pertenezca al plano, por lo tanto vemos que el plano tangente viene dado por el conjunto
+        $$\{(x,y,z)\in \R \thinspace : \thinspace x+y+z=3\}$$
+
+\end{document}
